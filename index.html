@@ -245,7 +245,12 @@
       input,
       select,
       textarea {
+        display: block;
+        box-sizing: border-box;
         width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        margin: 0;
         padding: 13px;
         border-radius: 7px;
         border: 1px solid #a47a2c;
@@ -543,8 +548,8 @@
       <p class="sub">Send your enquiry directly to WhatsApp.</p>
       <form id="enquiryForm" onsubmit="sendWA(event)" novalidate>
         <input id="name" name="name" type="text" placeholder="Name" autocomplete="name" required maxlength="100" aria-label="Name">
-        <input id="date" name="date" type="date" required aria-label="Preferred date">
-        <input id="time" name="time" type="time" required aria-label="Preferred time">
+        <input id="date" name="date" type="text" placeholder="Preferred date" data-picker-type="date" autocomplete="off" required aria-label="Preferred date">
+        <input id="time" name="time" type="text" placeholder="Preferred time" data-picker-type="time" autocomplete="off" required aria-label="Preferred time">
         <input id="phone" name="phone" type="tel" placeholder="Phone Number (optional)" autocomplete="tel" inputmode="tel" maxlength="20" aria-label="Phone Number">
         <input id="pax" name="pax" type="number" placeholder="PAX (optional)" min="1" max="1000" step="1" inputmode="numeric" aria-label="Number of passengers">
         <select id="service" name="service" required aria-label="Service Required">
@@ -633,16 +638,25 @@
         }
       }
 
-      // Open native date/time pickers when visitors click anywhere in the fields.
-      dateInput.addEventListener('click', function () {
-        if (typeof this.showPicker === 'function') {
-          try { this.showPicker(); } catch (error) { /* Browser may already have opened it. */ }
-        }
-      });
-      timeInput.addEventListener('click', function () {
-        if (typeof this.showPicker === 'function') {
-          try { this.showPicker(); } catch (error) { /* Browser may already have opened it. */ }
-        }
+      // Keep a visible placeholder on mobile; switch to the native picker on focus.
+      [dateInput, timeInput].forEach((field) => {
+        const pickerType = field.dataset.pickerType;
+        field.addEventListener('focus', function () {
+          if (this.type !== pickerType) {
+            this.type = pickerType;
+            if (typeof this.showPicker === 'function') {
+              try { this.showPicker(); } catch (error) { /* Picker may already be open. */ }
+            }
+          }
+        });
+        field.addEventListener('click', function () {
+          if (this.type === pickerType && typeof this.showPicker === 'function') {
+            try { this.showPicker(); } catch (error) { /* Picker may already be open. */ }
+          }
+        });
+        field.addEventListener('blur', function () {
+          if (!this.value) this.type = 'text';
+        });
       });
 
       function applyLanguage(language) {
@@ -757,7 +771,7 @@
 
         const selectedService = serviceInput.options[serviceInput.selectedIndex].text.trim();
         const message = `${t.greeting}\n\n${t.name}: ${nameInput.value}\n${t.date}: ${dateInput.value}\n${t.time}: ${timeInput.value}\n${t.phone}: ${phoneInput.value.trim() || t.missing}\n${t.pax}: ${paxInput.value || t.missing}\n${t.service}: ${selectedService}\n${t.notes}: ${notesInput.value.trim() || t.none}`;
-        const whatsappUrl = 'https://wa.me/6580162609?text=' + encodeURIComponent(message);
+        const whatsappUrl = 'https://wa.me/7498859916?text=' + encodeURIComponent(message);
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
       }
     </script>
