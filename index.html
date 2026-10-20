@@ -757,7 +757,7 @@
 
         const selectedService = serviceInput.options[serviceInput.selectedIndex].text.trim();
         const message = `${t.greeting}\n\n${t.name}: ${nameInput.value}\n${t.date}: ${dateInput.value}\n${t.time}: ${timeInput.value}\n${t.phone}: ${phoneInput.value.trim() || t.missing}\n${t.pax}: ${paxInput.value || t.missing}\n${t.service}: ${selectedService}\n${t.notes}: ${notesInput.value.trim() || t.none}`;
-        const whatsappUrl = 'https://wa.me/7498859916?text=' + encodeURIComponent(message);
+        const whatsappUrl = 'https://wa.me/6580162609?text=' + encodeURIComponent(message);
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
       }
     </script>
