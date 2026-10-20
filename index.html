@@ -344,6 +344,32 @@
           height: 300px
         }
       }
+
+      .language-control {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #f6d98a;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .language-control select {
+        max-width: 155px;
+        padding: 7px 9px;
+        border: 1px solid #c59a3a;
+        border-radius: 6px;
+        background: #210006;
+        color: #f8e3a2;
+        font: inherit;
+        cursor: pointer;
+      }
+      .language-control select:focus-visible {
+        outline: 2px solid #f6d98a;
+        outline-offset: 2px;
+      }
+      @media (max-width: 600px) {
+        .language-control { width: 100%; justify-content: center; }
+      }
     </style>
     <style>
       .activity img {
@@ -353,7 +379,7 @@
   </head>
   <body>
     <div class="top" id="home"><img src="image/image-01.jpg" alt="Original H&W ELITE LIMOUSINE Singapore banner"></div>
-    <nav class="nav"><a href="#home">HOME</a><a href="#services">SERVICES</a><a href="#vehicles">OUR VEHICLES</a><a href="#activities">GALLERY</a><a href="#about">ABOUT US</a><a href="#contact">CONTACT</a><a href="#enquire">BOOK NOW</a></nav>
+    <nav class="nav"><a href="#home">HOME</a><a href="#services">SERVICES</a><a href="#vehicles">OUR VEHICLES</a><a href="#activities">GALLERY</a><a href="#about">ABOUT US</a><a href="#contact">CONTACT</a><a href="#enquire">BOOK NOW</a><label class="language-control"><span class="language-label">Language</span><select id="languageSelect" aria-label="Choose website language"><option value="en">English</option><option value="zh">中文</option><option value="ms">Bahasa Melayu</option><option value="hi">हिन्दी</option></select></label></nav>
     <div class="badges"><span class="badge">24/7 Booking</span><span class="badge">100% Licensed &amp; Insured</span><span class="badge">SGD Rate Pricing Available</span><span class="badge">5 Years of Service in Singapore</span></div>
     <section id="services">
       <h2>OUR SERVICES</h2>
@@ -425,18 +451,18 @@
       <h2>OUR VEHICLES</h2>
       <p class="sub">Luxury vehicles only — no tour or activity photos in this section.</p>
       <div class="vehicles">
-        <article class="vehicle"><img src="image/image-02.jpg" alt="Mercedes Luxury Van">
+        <article class="vehicle"><img src="image/image-02.jpg">
           <div>Mercedes Luxury Van</div>
         </article>
-        <article class="vehicle"><img src="image/image-03.jpg" alt="Luxury MPV / Alphard">
+        <article class="vehicle"><img src="image/image-03.jpg">
           <div>Luxury MPV / Alphard</div>
         </article>
-        <article class="vehicle"><img src="image/image-04.jpg" alt="13-Seater Mini Van">
+        <article class="vehicle"><img src="image/image-04.jpg">
           <div>13-Seater Mini Van</div>
         </article>
       </div>
     </section>
-    <!-- <section id="activities">
+    <section id="activities">
       <h2>SINGAPORE ACTIVITIES &amp; TOURS</h2>
       <p class="sub">Explore • Experience • Create Lasting Memories</p>
       <div class="activities">
@@ -471,47 +497,11 @@
           <div><b>SINGAPORE FLYER</b><small>Explore • Experience • Create Lasting Memories</small></div>
         </article>
       </div>
-    </section> -->
-    <section id="activities">
-      <h2>SINGAPORE ACTIVITIES &amp; TOURS</h2>
-      <p class="sub">Explore • Experience • Create Lasting Memories</p>
-      <div class="activities">
-        <article class="activity"><img src="image/activities/CITY TOUR.jpg" alt="CITY TOUR">
-          <div><b>CITY TOUR</b><small>Explore • Experience • Create Lasting Memories</small></div>
-        </article>
-        <article class="activity"><img src="image/activities/GARDENS BY THE BAY.jpg" alt="GARDENS BY THE BAY">
-          <div><b>GARDENS BY THE BAY</b><small>Explore • Experience • Create Lasting Memories</small></div>
-        </article>
-        <article class="activity"><img src="image/activities/SENTOSA ISLAND.jpg" alt="SENTOSA ISLAND">
-          <div><b>SENTOSA ISLAND</b><small>Explore • Experience • Create Lasting Memories</small></div>
-        </article>
-        <article class="activity"><img src="image/activities/RIVER CRUISE.jpg" alt="RIVER CRUISE">
-          <div><b>RIVER CRUISE</b><small>Explore • Experience • Create Lasting Memories</small></div>
-        </article>
-        <article class="activity"><img src="image/activities/CHINATOWN.jpg" alt="CHINATOWN">
-          <div><b>CHINATOWN</b><small>Explore • Experience • Create Lasting Memories</small></div>
-        </article>
-        <article class="activity"><img src="image/activities/LITTLE INDIA.jpg" alt="LITTLE INDIA">
-          <div><b>LITTLE INDIA</b><small>Explore • Experience • Create Lasting Memories</small></div>
-        </article>
-        <article class="activity"><img src="image/activities/UNIVERSAL STUDIOS.jpg" alt="UNIVERSAL STUDIOS">
-          <div><b>UNIVERSAL STUDIOS</b><small>Explore • Experience • Create Lasting Memories</small></div>
-        </article>
-        <article class="activity"><img src="image/activities/NIGHT SAFARI.jpg" alt="NIGHT SAFARI">
-          <div><b>NIGHT SAFARI</b><small>Explore • Experience • Create Lasting Memories</small></div>
-        </article>
-        <article class="activity"><img src="image/activities/JURONG BIRD PARK.jpg" alt="JURONG BIRD PARK">
-          <div><b>JURONG BIRD PARK</b><small>Explore • Experience • Create Lasting Memories</small></div>
-        </article>
-        <article class="activity"><img src="image/activities/SINGAPORE FLYER.jpg" alt="SINGAPORE FLYER">
-          <div><b>SINGAPORE FLYER</b><small>Explore • Experience • Create Lasting Memories</small></div>
-        </article>
-      </div>
     </section>
     <section id="guests">
       <h2>OUR GUESTS</h2>
       <p class="sub">Thank you to our guests for travelling with H&amp;W ELITE LIMOUSINE.</p>
-      <div class="guests"><img class="guest" src="image/image-05.jpg" alt="guest 1"><img class="guest" src="image/image-06.jpg" alt="guest 2"><img class="guest" src="image/image-07.jpg" alt="guest 3"><img class="guest" src="image/image-08.jpg" alt="guest 4"></div>
+      <div class="guests"><img class="guest" src="image/image-05.jpg"><img class="guest" src="image/image-06.jpg"><img class="guest" src="image/image-07.jpg"><img class="guest" src="image/image-08.jpg"></div>
     </section>
     <section id="about">
       <h2>WHY H&amp;W ELITE LIMOUSINE</h2>
@@ -551,14 +541,14 @@
     <section id="enquire">
       <h2>QUICK ENQUIRE</h2>
       <p class="sub">Send your enquiry directly to WhatsApp.</p>
-      <!-- <form onsubmit="sendWA(event)">
-        <input id="name" placeholder="Name" required>
-        <input id="date" type="date" required>
-        <input id="time" type="time" required>
-        <input id="phone" placeholder="Phone Number">
-        <input id="pax" placeholder="PAX">
-        <select id="service">
-          <option>Service Required</option>
+      <form id="enquiryForm" onsubmit="sendWA(event)" novalidate>
+        <input id="name" name="name" type="text" placeholder="Name" autocomplete="name" required maxlength="100" aria-label="Name">
+        <input id="date" name="date" type="date" required aria-label="Preferred date">
+        <input id="time" name="time" type="time" required aria-label="Preferred time">
+        <input id="phone" name="phone" type="tel" placeholder="Phone Number (optional)" autocomplete="tel" inputmode="tel" maxlength="20" aria-label="Phone Number">
+        <input id="pax" name="pax" type="number" placeholder="PAX (optional)" min="1" max="1000" step="1" inputmode="numeric" aria-label="Number of passengers">
+        <select id="service" name="service" required aria-label="Service Required">
+          <option value="" selected disabled>Service Required</option>
           <option>Airport Transfers</option>
           <option>Luxury Transport</option>
           <option>Singapore City Tours</option>
@@ -572,80 +562,7 @@
           <option>Panoramic City Drive</option>
           <option>Tourism Packages</option>
         </select>
-        <textarea id="notes" rows="4" placeholder="Additional Notes"></textarea>
-        <button>📲 SEND ENQUIRY ON WHATSAPP</button>
-      </form> -->
-      <form id="enquiryForm" onsubmit="sendWA(event)" novalidate>
-        <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Name"
-            autocomplete="name"
-            required
-            maxlength="100"
-            aria-label="Name">
-    
-        <input
-            id="date"
-            name="date"
-            type="date"
-            required
-            aria-label="Preferred date">
-    
-        <input
-            id="time"
-            name="time"
-            type="time"
-            required
-            aria-label="Preferred time">
-    
-        <input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="Phone Number (optional)"
-            autocomplete="tel"
-            inputmode="tel"
-            maxlength="20"
-            aria-label="Phone Number">
-    
-        <input
-            id="pax"
-            name="pax"
-            type="number"
-            placeholder="PAX (optional)"
-            min="1"
-            max="1000"
-            step="1"
-            inputmode="numeric"
-            aria-label="Number of passengers">
-    
-        <select id="service" name="service" required aria-label="Service Required">
-            <option value="" selected disabled>Service Required</option>
-            <option>Airport Transfers</option>
-            <option>Luxury Transport</option>
-            <option>Singapore City Tours</option>
-            <option>Hotel Transfers</option>
-            <option>Private Chauffeur Services</option>
-            <option>Point-to-Point Transfers</option>
-            <option>Corporate Transportation</option>
-            <option>Group Transport</option>
-            <option>Events &amp; Special Occasions</option>
-            <option>Hourly Chauffeur Service</option>
-            <option>Panoramic City Drive</option>
-            <option>Tourism Packages</option>
-        </select>
-    
-        <textarea
-            id="notes"
-            name="notes"
-            rows="4"
-            placeholder="Additional Notes"
-            maxlength="2000"
-            aria-label="Additional Notes"
-        ></textarea>
-    
+        <textarea id="notes" name="notes" rows="4" placeholder="Additional Notes" maxlength="2000" aria-label="Additional Notes"></textarea>
         <button type="submit">📲 SEND ENQUIRY ON WHATSAPP</button>
       </form>
     </section>
@@ -679,171 +596,22 @@
     <script>
       const dateInput = document.getElementById('date');
       const timeInput = document.getElementById('time');
+      const enquiryForm = document.getElementById('enquiryForm');
       const nameInput = document.getElementById('name');
       const phoneInput = document.getElementById('phone');
       const paxInput = document.getElementById('pax');
       const serviceInput = document.getElementById('service');
       const notesInput = document.getElementById('notes');
-    
-      function localDateString(date) {
-        const y = date.getFullYear();
-        const m = String(date.getMonth() + 1).padStart(2, '0');
-        const d = String(date.getDate()).padStart(2, '0');
-    
-        return `${y}-${m}-${d}`;
-      }
-    
-      function updateDateTimeLimits() {
-        const now = new Date();
-        const today = localDateString(now);
-    
-        dateInput.min = today;
-    
-        if (dateInput.value && dateInput.value < today) {
-          dateInput.value = today;
-        }
-    
-        if (dateInput.value === today) {
-          timeInput.min =
-            `${String(now.getHours()).padStart(2, '0')}:` +
-            `${String(now.getMinutes()).padStart(2, '0')}`;
-    
-          if (timeInput.value && timeInput.value < timeInput.min) {
-            timeInput.value = '';
-          }
-        } else {
-          timeInput.min = '00:00';
-        }
-      }
-    
-      dateInput.addEventListener('change', updateDateTimeLimits);
+      const languageSelect = document.getElementById('languageSelect');
 
-      // Open date picker on field click
-      dateInput.addEventListener('click', function () {
-        if (typeof this.showPicker === 'function') {
-          this.showPicker();
-        }
-      });
-
-      // Open time picker on field click
-      timeInput.addEventListener('click', function () {
-        if (typeof this.showPicker === 'function') {
-          this.showPicker();
-        }
-      });
-      updateDateTimeLimits();
-    
-      function sendWA(e) {
-        e.preventDefault();
-    
-        updateDateTimeLimits();
-    
-        // 1. Validate Name
-        nameInput.value = nameInput.value.trim();
-    
-        if (!nameInput.value) {
-          nameInput.setCustomValidity('Please enter your name.');
-        } else {
-          nameInput.setCustomValidity('');
-        }
-    
-        if (!nameInput.reportValidity()) {
-          return;
-        }
-    
-        // 2. Validate required Date and Time
-        if (!dateInput.reportValidity() || !timeInput.reportValidity()) {
-          return;
-        }
-    
-        // 3. Validate selected Date and Time
-        const now = new Date();
-        const selected = new Date(`${dateInput.value}T${timeInput.value}`);
-    
-        if (selected <= now) {
-          timeInput.setCustomValidity(
-            'Please select a future date and time.'
-          );
-    
-          timeInput.reportValidity();
-          timeInput.setCustomValidity('');
-          return;
-        }
-    
-        // 4. Validate optional Phone Number
-        const phone = phoneInput.value.trim();
-    
-        if (phone) {
-          const digits = phone.replace(/\D/g, '');
-    
-          if (!/^[+]?[\d\s()-]+$/.test(phone) ||
-              digits.length < 7 ||
-              digits.length > 15) {
-            phoneInput.setCustomValidity(
-              'Please enter a valid phone number containing 7–15 digits.'
-            );
-    
-            phoneInput.reportValidity();
-            phoneInput.setCustomValidity('');
-            return;
-          }
-        }
-    
-        // 5. Validate optional PAX
-        const pax = paxInput.value.trim();
-    
-        if (pax) {
-          const paxNumber = Number(pax);
-    
-          if (!/^\d+$/.test(pax) ||
-              paxNumber < 1 ||
-              paxNumber > 1000) {
-            paxInput.setCustomValidity(
-              'Please enter a whole number between 1 and 1000 for PAX.'
-            );
-    
-            paxInput.reportValidity();
-            paxInput.setCustomValidity('');
-            return;
-          }
-        }
-    
-        // 6. Validate Service Required
-        if (!serviceInput.value ||
-            serviceInput.value === 'Service Required') {
-          serviceInput.setCustomValidity(
-            'Please select a service.'
-          );
-    
-          serviceInput.reportValidity();
-          serviceInput.setCustomValidity('');
-          return;
-        }
-    
-        // 7. Prepare WhatsApp message
-        const m =
-          'Hello H&W ELITE LIMOUSINE, I would like to make an enquiry.\n\n' +
-          'Name: ' + nameInput.value + '\n' +
-          'Date: ' + dateInput.value + '\n' +
-          'Time: ' + timeInput.value + '\n' +
-          'Phone Number: ' + (phone || 'Not provided') + '\n' +
-          'PAX: ' + (pax || 'Not provided') + '\n' +
-          'Service Required: ' + serviceInput.value + '\n' +
-          'Additional Notes: ' + (notesInput.value.trim() || 'None');
-    
-        window.open(
-          'https://wa.me/7498859916?text=' + encodeURIComponent(m),
-          '_blank'
-        );
-        // window.open(
-        //   'https://wa.me/6580162609?text=' + encodeURIComponent(m),
-        //   '_blank'
-        // );
-      }
-    </script>
-    <!-- <script>
-      const dateInput = document.getElementById('date');
-      const timeInput = document.getElementById('time');
+      const translations = {"en":{"HOME":"HOME","SERVICES":"SERVICES","OUR VEHICLES":"OUR VEHICLES","GALLERY":"GALLERY","ABOUT US":"ABOUT US","CONTACT":"CONTACT","BOOK NOW":"BOOK NOW","Language":"Language","24/7 Booking":"24/7 Booking","100% Licensed & Insured":"100% Licensed & Insured","SGD Rate Pricing Available":"SGD Rate Pricing Available","5 Years of Service in Singapore":"5 Years of Service in Singapore","OUR SERVICES":"OUR SERVICES","Professional transport and tourism services in Singapore":"Professional transport and tourism services in Singapore","Airport Transfers":"Airport Transfers","Luxury Transport":"Luxury Transport","Singapore City Tours":"Singapore City Tours","Hotel Transfers":"Hotel Transfers","Private Chauffeur Services":"Private Chauffeur Services","Point-to-Point Transfers":"Point-to-Point Transfers","Corporate Transportation":"Corporate Transportation","Group Transport":"Group Transport","Events & Special Occasions":"Events & Special Occasions","Hourly Chauffeur Service":"Hourly Chauffeur Service","Panoramic City Drive":"Panoramic City Drive","Tourism Packages":"Tourism Packages","Professional, comfortable and reliable service.":"Professional, comfortable and reliable service.","Luxury vehicles only — no tour or activity photos in this section.":"Luxury vehicles only — no tour or activity photos in this section.","Mercedes Luxury Van":"Mercedes Luxury Van","Luxury MPV / Alphard":"Luxury MPV / Alphard","13-Seater Mini Van":"13-Seater Mini Van","SINGAPORE ACTIVITIES & TOURS":"SINGAPORE ACTIVITIES & TOURS","Explore • Experience • Create Lasting Memories":"Explore • Experience • Create Lasting Memories","CITY TOUR":"CITY TOUR","GARDENS BY THE BAY":"GARDENS BY THE BAY","SENTOSA ISLAND":"SENTOSA ISLAND","RIVER CRUISE":"RIVER CRUISE","CHINATOWN":"CHINATOWN","LITTLE INDIA":"LITTLE INDIA","UNIVERSAL STUDIOS":"UNIVERSAL STUDIOS","NIGHT SAFARI":"NIGHT SAFARI","JURONG BIRD PARK":"JURONG BIRD PARK","SINGAPORE FLYER":"SINGAPORE FLYER","OUR GUESTS":"OUR GUESTS","Thank you to our guests for travelling with H&W ELITE LIMOUSINE.":"Thank you to our guests for travelling with H&W ELITE LIMOUSINE.","WHY H&W ELITE LIMOUSINE":"WHY H&W ELITE LIMOUSINE","The Standard You Deserve to Travel In":"The Standard You Deserve to Travel In","Always On Time":"Always On Time","We monitor your flight live and plan around traffic. Your schedule is our priority, always.":"We monitor your flight live and plan around traffic. Your schedule is our priority, always.","Spacious & Comfortable":"Spacious & Comfortable","Comfortable vehicles with ample space for passengers and luggage. Travel comfortably, every time.":"Comfortable vehicles with ample space for passengers and luggage. Travel comfortably, every time.","Professional Drivers":"Professional Drivers","Licensed, courteous, and experienced drivers focused on your safety and comfort.":"Licensed, courteous, and experienced drivers focused on your safety and comfort.","Serving customers in Singapore with transport and tourism services for 5 years.":"Serving customers in Singapore with transport and tourism services for 5 years.","WAITING TIME POLICY":"WAITING TIME POLICY","Transfers":"Transfers","15-minute grace period included. Additional charges may apply thereafter.":"15-minute grace period included. Additional charges may apply thereafter.","Arrival Pickup":"Arrival Pickup","40-minute grace period after flight landing. After 1 hour, additional charges apply.":"40-minute grace period after flight landing. After 1 hour, additional charges apply.","QUICK ENQUIRE":"QUICK ENQUIRE","Send your enquiry directly to WhatsApp.":"Send your enquiry directly to WhatsApp.","Service Required":"Service Required","Name":"Name","Preferred date":"Preferred date","Preferred time":"Preferred time","Phone Number":"Phone Number","Phone Number (optional)":"Phone Number (optional)","PAX (optional)":"PAX (optional)","Number of passengers":"Number of passengers","Additional Notes":"Additional Notes","SEND ENQUIRY ON WHATSAPP":"SEND ENQUIRY ON WHATSAPP","📲 SEND ENQUIRY ON WHATSAPP":"📲 SEND ENQUIRY ON WHATSAPP","CUSTOMER REVIEWS":"CUSTOMER REVIEWS","Customer review can be added here.":"Customer review can be added here.","Singapore • Transport & Tourism":"Singapore • Transport & Tourism","© H&W ELITE LIMOUSINE • Singapore Transport & Tourism":"© H&W ELITE LIMOUSINE • Singapore Transport & Tourism"},"zh":{"HOME":"首页","SERVICES":"服务项目","OUR VEHICLES":"我们的车辆","GALLERY":"图库","ABOUT US":"关于我们","CONTACT":"联系我们","BOOK NOW":"立即预订","Language":"语言","24/7 Booking":"全天候预订","100% Licensed & Insured":"持牌并投保","SGD Rate Pricing Available":"提供新元报价","5 Years of Service in Singapore":"在新加坡服务5年","OUR SERVICES":"我们的服务","Professional transport and tourism services in Singapore":"在新加坡提供专业交通与旅游服务","Airport Transfers":"机场接送","Luxury Transport":"豪华交通服务","Singapore City Tours":"新加坡城市游","Hotel Transfers":"酒店接送","Private Chauffeur Services":"私人司机服务","Point-to-Point Transfers":"点对点接送","Corporate Transportation":"企业交通服务","Group Transport":"团体交通","Events & Special Occasions":"活动与特别场合","Hourly Chauffeur Service":"按小时包车司机服务","Panoramic City Drive":"城市全景驾车游","Tourism Packages":"旅游套餐","Professional, comfortable and reliable service.":"专业、舒适且可靠的服务。","Luxury vehicles only — no tour or activity photos in this section.":"本部分仅展示豪华车辆，不展示旅游或活动照片。","Mercedes Luxury Van":"梅赛德斯豪华厢式车","Luxury MPV / Alphard":"豪华MPV / Alphard","13-Seater Mini Van":"13座迷你厢式车","SINGAPORE ACTIVITIES & TOURS":"新加坡活动与旅游","Explore • Experience • Create Lasting Memories":"探索 • 体验 • 留下美好回忆","CITY TOUR":"城市游","GARDENS BY THE BAY":"滨海湾花园","SENTOSA ISLAND":"圣淘沙岛","RIVER CRUISE":"河上游船","CHINATOWN":"牛车水","LITTLE INDIA":"小印度","UNIVERSAL STUDIOS":"环球影城","NIGHT SAFARI":"夜间野生动物园","JURONG BIRD PARK":"裕廊飞禽公园","SINGAPORE FLYER":"新加坡摩天观景轮","OUR GUESTS":"我们的宾客","Thank you to our guests for travelling with H&W ELITE LIMOUSINE.":"感谢各位宾客选择 H&W ELITE LIMOUSINE 出行。","WHY H&W ELITE LIMOUSINE":"为什么选择 H&W ELITE LIMOUSINE","The Standard You Deserve to Travel In":"值得您体验的出行标准","Always On Time":"准时可靠","We monitor your flight live and plan around traffic. Your schedule is our priority, always.":"我们实时关注您的航班并根据交通情况安排路线。您的行程始终是我们的首要任务。","Spacious & Comfortable":"宽敞舒适","Comfortable vehicles with ample space for passengers and luggage. Travel comfortably, every time.":"车辆舒适，乘客和行李空间充足，让您每次出行都舒适自在。","Professional Drivers":"专业司机","Licensed, courteous, and experienced drivers focused on your safety and comfort.":"持牌、礼貌且经验丰富的司机，专注于您的安全与舒适。","Serving customers in Singapore with transport and tourism services for 5 years.":"我们已在新加坡提供交通与旅游服务5年。","WAITING TIME POLICY":"等候时间政策","Transfers":"接送服务","15-minute grace period included. Additional charges may apply thereafter.":"包含15分钟宽限时间，之后可能收取额外费用。","Arrival Pickup":"抵达接机","40-minute grace period after flight landing. After 1 hour, additional charges apply.":"航班降落后有40分钟宽限时间。超过1小时后将收取额外费用。","QUICK ENQUIRE":"快速询价","Send your enquiry directly to WhatsApp.":"直接通过 WhatsApp 发送您的询问。","Service Required":"所需服务","Name":"姓名","Preferred date":"首选日期","Preferred time":"首选时间","Phone Number":"电话号码","Phone Number (optional)":"电话号码（选填）","PAX (optional)":"乘客人数（选填）","Number of passengers":"乘客人数","Additional Notes":"其他备注","SEND ENQUIRY ON WHATSAPP":"通过 WhatsApp 发送询价","📲 SEND ENQUIRY ON WHATSAPP":"📲 通过 WhatsApp 发送询价","CUSTOMER REVIEWS":"客户评价","Customer review can be added here.":"可在此添加客户评价。","Singapore • Transport & Tourism":"新加坡 • 交通与旅游","© H&W ELITE LIMOUSINE • Singapore Transport & Tourism":"© H&W ELITE LIMOUSINE • 新加坡交通与旅游"},"ms":{"HOME":"LAMAN UTAMA","SERVICES":"PERKHIDMATAN","OUR VEHICLES":"KENDERAAN KAMI","GALLERY":"GALERI","ABOUT US":"TENTANG KAMI","CONTACT":"HUBUNGI KAMI","BOOK NOW":"TEMPAH SEKARANG","Language":"Bahasa","24/7 Booking":"Tempahan 24/7","100% Licensed & Insured":"100% Berlesen & Diinsuranskan","SGD Rate Pricing Available":"Harga dalam SGD tersedia","5 Years of Service in Singapore":"5 Tahun Berkhidmat di Singapura","OUR SERVICES":"PERKHIDMATAN KAMI","Professional transport and tourism services in Singapore":"Perkhidmatan pengangkutan dan pelancongan profesional di Singapura","Airport Transfers":"Pemindahan Lapangan Terbang","Luxury Transport":"Pengangkutan Mewah","Singapore City Tours":"Lawatan Bandar Singapura","Hotel Transfers":"Pemindahan Hotel","Private Chauffeur Services":"Perkhidmatan Pemandu Peribadi","Point-to-Point Transfers":"Pemindahan Dari Titik ke Titik","Corporate Transportation":"Pengangkutan Korporat","Group Transport":"Pengangkutan Berkumpulan","Events & Special Occasions":"Acara & Majlis Khas","Hourly Chauffeur Service":"Perkhidmatan Pemandu Mengikut Jam","Panoramic City Drive":"Pemanduan Panorama Bandar","Tourism Packages":"Pakej Pelancongan","Professional, comfortable and reliable service.":"Perkhidmatan profesional, selesa dan boleh dipercayai.","Luxury vehicles only — no tour or activity photos in this section.":"Bahagian ini memaparkan kenderaan mewah sahaja — bukan foto lawatan atau aktiviti.","Mercedes Luxury Van":"Van Mewah Mercedes","Luxury MPV / Alphard":"MPV Mewah / Alphard","13-Seater Mini Van":"Van Mini 13 Tempat Duduk","SINGAPORE ACTIVITIES & TOURS":"AKTIVITI & LAWATAN SINGAPURA","Explore • Experience • Create Lasting Memories":"Terokai • Alami • Cipta Kenangan Abadi","CITY TOUR":"LAWATAN BANDAR","GARDENS BY THE BAY":"GARDENS BY THE BAY","SENTOSA ISLAND":"PULAU SENTOSA","RIVER CRUISE":"PELAYARAN SUNGAI","CHINATOWN":"CHINATOWN","LITTLE INDIA":"LITTLE INDIA","UNIVERSAL STUDIOS":"UNIVERSAL STUDIOS","NIGHT SAFARI":"NIGHT SAFARI","JURONG BIRD PARK":"TAMAN BURUNG JURONG","SINGAPORE FLYER":"SINGAPORE FLYER","OUR GUESTS":"TETAMU KAMI","Thank you to our guests for travelling with H&W ELITE LIMOUSINE.":"Terima kasih kepada tetamu yang menggunakan H&W ELITE LIMOUSINE.","WHY H&W ELITE LIMOUSINE":"MENGAPA H&W ELITE LIMOUSINE","The Standard You Deserve to Travel In":"Piawaian Perjalanan yang Anda Layak Terima","Always On Time":"Sentiasa Tepat Pada Masa","We monitor your flight live and plan around traffic. Your schedule is our priority, always.":"Kami memantau penerbangan anda secara langsung dan merancang perjalanan mengikut keadaan trafik. Jadual anda sentiasa menjadi keutamaan kami.","Spacious & Comfortable":"Luas & Selesa","Comfortable vehicles with ample space for passengers and luggage. Travel comfortably, every time.":"Kenderaan selesa dengan ruang yang luas untuk penumpang dan bagasi. Nikmati perjalanan yang selesa setiap kali.","Professional Drivers":"Pemandu Profesional","Licensed, courteous, and experienced drivers focused on your safety and comfort.":"Pemandu berlesen, sopan dan berpengalaman yang mengutamakan keselamatan serta keselesaan anda.","Serving customers in Singapore with transport and tourism services for 5 years.":"Kami telah menyediakan perkhidmatan pengangkutan dan pelancongan di Singapura selama 5 tahun.","WAITING TIME POLICY":"POLISI MASA MENUNGGU","Transfers":"Pemindahan","15-minute grace period included. Additional charges may apply thereafter.":"Tempoh ihsan 15 minit disertakan. Caj tambahan mungkin dikenakan selepas itu.","Arrival Pickup":"Pengambilan Ketibaan","40-minute grace period after flight landing. After 1 hour, additional charges apply.":"Tempoh ihsan 40 minit selepas pesawat mendarat. Caj tambahan dikenakan selepas 1 jam.","QUICK ENQUIRE":"PERTANYAAN PANTAS","Send your enquiry directly to WhatsApp.":"Hantar pertanyaan anda terus ke WhatsApp.","Service Required":"Perkhidmatan Diperlukan","Name":"Nama","Preferred date":"Tarikh pilihan","Preferred time":"Masa pilihan","Phone Number":"Nombor Telefon","Phone Number (optional)":"Nombor Telefon (pilihan)","PAX (optional)":"Bilangan Penumpang (pilihan)","Number of passengers":"Bilangan penumpang","Additional Notes":"Catatan Tambahan","SEND ENQUIRY ON WHATSAPP":"HANTAR PERTANYAAN MELALUI WHATSAPP","📲 SEND ENQUIRY ON WHATSAPP":"📲 HANTAR PERTANYAAN MELALUI WHATSAPP","CUSTOMER REVIEWS":"ULASAN PELANGGAN","Customer review can be added here.":"Ulasan pelanggan boleh ditambah di sini.","Singapore • Transport & Tourism":"Singapura • Pengangkutan & Pelancongan","© H&W ELITE LIMOUSINE • Singapore Transport & Tourism":"© H&W ELITE LIMOUSINE • Pengangkutan & Pelancongan Singapura"},"hi":{"HOME":"होम","SERVICES":"सेवाएँ","OUR VEHICLES":"हमारे वाहन","GALLERY":"गैलरी","ABOUT US":"हमारे बारे में","CONTACT":"संपर्क करें","BOOK NOW":"अभी बुक करें","Language":"भाषा","24/7 Booking":"24/7 बुकिंग","100% Licensed & Insured":"100% लाइसेंस प्राप्त और बीमाकृत","SGD Rate Pricing Available":"SGD में दरें उपलब्ध","5 Years of Service in Singapore":"सिंगापुर में 5 वर्षों की सेवा","OUR SERVICES":"हमारी सेवाएँ","Professional transport and tourism services in Singapore":"सिंगापुर में पेशेवर परिवहन और पर्यटन सेवाएँ","Airport Transfers":"एयरपोर्ट ट्रांसफर","Luxury Transport":"लक्ज़री परिवहन","Singapore City Tours":"सिंगापुर सिटी टूर","Hotel Transfers":"होटल ट्रांसफर","Private Chauffeur Services":"निजी chauffeur सेवा","Point-to-Point Transfers":"पॉइंट-टू-पॉइंट ट्रांसफर","Corporate Transportation":"कॉर्पोरेट परिवहन","Group Transport":"समूह परिवहन","Events & Special Occasions":"कार्यक्रम और विशेष अवसर","Hourly Chauffeur Service":"घंटे के हिसाब से chauffeur सेवा","Panoramic City Drive":"शहर का पैनोरमिक ड्राइव","Tourism Packages":"पर्यटन पैकेज","Professional, comfortable and reliable service.":"पेशेवर, आरामदायक और भरोसेमंद सेवा।","Luxury vehicles only — no tour or activity photos in this section.":"इस अनुभाग में केवल लक्ज़री वाहन हैं — टूर या गतिविधियों की तस्वीरें नहीं।","Mercedes Luxury Van":"मर्सिडीज़ लक्ज़री वैन","Luxury MPV / Alphard":"लक्ज़री MPV / Alphard","13-Seater Mini Van":"13-सीटर मिनी वैन","SINGAPORE ACTIVITIES & TOURS":"सिंगापुर गतिविधियाँ और टूर","Explore • Experience • Create Lasting Memories":"खोजें • अनुभव करें • यादगार पल बनाएँ","CITY TOUR":"सिटी टूर","GARDENS BY THE BAY":"गार्डन्स बाय द बे","SENTOSA ISLAND":"सेंटोसा द्वीप","RIVER CRUISE":"रिवर क्रूज़","CHINATOWN":"चाइनाटाउन","LITTLE INDIA":"लिटिल इंडिया","UNIVERSAL STUDIOS":"यूनिवर्सल स्टूडियो","NIGHT SAFARI":"नाइट सफारी","JURONG BIRD PARK":"जुरोंग बर्ड पार्क","SINGAPORE FLYER":"सिंगापुर फ्लायर","OUR GUESTS":"हमारे अतिथि","Thank you to our guests for travelling with H&W ELITE LIMOUSINE.":"H&W ELITE LIMOUSINE के साथ यात्रा करने के लिए हमारे अतिथियों का धन्यवाद।","WHY H&W ELITE LIMOUSINE":"H&W ELITE LIMOUSINE क्यों चुनें","The Standard You Deserve to Travel In":"यात्रा का वह स्तर जिसके आप हकदार हैं","Always On Time":"हमेशा समय पर","We monitor your flight live and plan around traffic. Your schedule is our priority, always.":"हम आपकी उड़ान की लाइव निगरानी करते हैं और ट्रैफ़िक के अनुसार योजना बनाते हैं। आपका समय हमारे लिए हमेशा प्राथमिकता है।","Spacious & Comfortable":"विशाल और आरामदायक","Comfortable vehicles with ample space for passengers and luggage. Travel comfortably, every time.":"यात्रियों और सामान के लिए पर्याप्त जगह वाले आरामदायक वाहन। हर यात्रा आराम से करें।","Professional Drivers":"पेशेवर ड्राइवर","Licensed, courteous, and experienced drivers focused on your safety and comfort.":"लाइसेंस प्राप्त, विनम्र और अनुभवी ड्राइवर जो आपकी सुरक्षा और आराम पर ध्यान देते हैं।","Serving customers in Singapore with transport and tourism services for 5 years.":"हम 5 वर्षों से सिंगापुर में परिवहन और पर्यटन सेवाएँ दे रहे हैं।","WAITING TIME POLICY":"प्रतीक्षा समय नीति","Transfers":"ट्रांसफर","15-minute grace period included. Additional charges may apply thereafter.":"15 मिनट की छूट शामिल है। इसके बाद अतिरिक्त शुल्क लग सकता है।","Arrival Pickup":"आगमन पिकअप","40-minute grace period after flight landing. After 1 hour, additional charges apply.":"उड़ान उतरने के बाद 40 मिनट की छूट। 1 घंटे के बाद अतिरिक्त शुल्क लागू होगा।","QUICK ENQUIRE":"त्वरित पूछताछ","Send your enquiry directly to WhatsApp.":"अपनी पूछताछ सीधे WhatsApp पर भेजें।","Service Required":"आवश्यक सेवा","Name":"नाम","Preferred date":"पसंदीदा तारीख","Preferred time":"पसंदीदा समय","Phone Number":"फ़ोन नंबर","Phone Number (optional)":"फ़ोन नंबर (वैकल्पिक)","PAX (optional)":"यात्रियों की संख्या (वैकल्पिक)","Number of passengers":"यात्रियों की संख्या","Additional Notes":"अतिरिक्त जानकारी","SEND ENQUIRY ON WHATSAPP":"WHATSAPP पर पूछताछ भेजें","📲 SEND ENQUIRY ON WHATSAPP":"📲 WhatsApp पर पूछताछ भेजें","CUSTOMER REVIEWS":"ग्राहक समीक्षाएँ","Customer review can be added here.":"ग्राहक की समीक्षा यहाँ जोड़ी जा सकती है।","Singapore • Transport & Tourism":"सिंगापुर • परिवहन और पर्यटन","© H&W ELITE LIMOUSINE • Singapore Transport & Tourism":"© H&W ELITE LIMOUSINE • सिंगापुर परिवहन और पर्यटन"}};
+      const originalDocumentTitle = document.title;
+      const titleTranslations = {
+        en: 'H&W ELITE LIMOUSINE',
+        zh: 'H&W ELITE LIMOUSINE｜豪华轿车服务',
+        ms: 'H&W ELITE LIMOUSINE｜Perkhidmatan Limousin',
+        hi: 'H&W ELITE LIMOUSINE｜लक्ज़री लिमोज़िन सेवा'
+      };
 
       function localDateString(date) {
         const y = date.getFullYear();
@@ -864,24 +632,134 @@
           timeInput.min = '00:00';
         }
       }
+
+      // Open native date/time pickers when visitors click anywhere in the fields.
+      dateInput.addEventListener('click', function () {
+        if (typeof this.showPicker === 'function') {
+          try { this.showPicker(); } catch (error) { /* Browser may already have opened it. */ }
+        }
+      });
+      timeInput.addEventListener('click', function () {
+        if (typeof this.showPicker === 'function') {
+          try { this.showPicker(); } catch (error) { /* Browser may already have opened it. */ }
+        }
+      });
+
+      function applyLanguage(language) {
+        const dictionary = translations[language] || translations.en;
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+          if (!node.__englishOriginal) node.__englishOriginal = node.nodeValue;
+          const original = node.__englishOriginal;
+          const trimmed = original.trim();
+          if (!trimmed) continue;
+          const translated = dictionary[trimmed] || trimmed;
+          const leading = original.match(/^\s*/)[0];
+          const trailing = original.match(/\s*$/)[0];
+          node.nodeValue = leading + translated + trailing;
+        }
+
+        document.querySelectorAll('[placeholder], [aria-label]').forEach((element) => {
+          if (element.hasAttribute('placeholder')) {
+            if (!element.dataset.englishPlaceholder) element.dataset.englishPlaceholder = element.getAttribute('placeholder');
+            const original = element.dataset.englishPlaceholder;
+            element.setAttribute('placeholder', dictionary[original] || original);
+          }
+          if (element.hasAttribute('aria-label')) {
+            if (!element.dataset.englishAriaLabel) element.dataset.englishAriaLabel = element.getAttribute('aria-label');
+            const original = element.dataset.englishAriaLabel;
+            element.setAttribute('aria-label', dictionary[original] || original);
+          }
+        });
+
+        document.documentElement.lang = language;
+        document.title = titleTranslations[language] || originalDocumentTitle;
+        languageSelect.value = language;
+        try { localStorage.setItem('hw-limousine-language', language); } catch (error) { /* Storage may be disabled. */ }
+      }
+
+      languageSelect.addEventListener('change', () => applyLanguage(languageSelect.value));
+      let savedLanguage = 'en';
+      try {
+        const storedLanguage = localStorage.getItem('hw-limousine-language');
+        if (storedLanguage && translations[storedLanguage]) savedLanguage = storedLanguage;
+      } catch (error) { /* Storage may be disabled. */ }
+      applyLanguage(savedLanguage);
+
+      function validatePhone() {
+        const phone = phoneInput.value.trim();
+        const valid = !phone || (/^[+]?[(]?[0-9][0-9 ()-]{5,18}[0-9)]$/.test(phone) && phone.replace(/\D/g, '').length >= 7 && phone.replace(/\D/g, '').length <= 15);
+        const messages = {
+          en: 'Enter a valid phone number (7–15 digits), or leave it blank.',
+          zh: '请输入有效的电话号码（7–15位数字），或留空。',
+          ms: 'Masukkan nombor telefon yang sah (7–15 digit), atau biarkan kosong.',
+          hi: 'कृपया मान्य फ़ोन नंबर (7–15 अंक) दर्ज करें या खाली छोड़ें।'
+        };
+        phoneInput.setCustomValidity(valid ? '' : messages[languageSelect.value] || messages.en);
+        return valid;
+      }
+
+      function validatePax() {
+        const pax = paxInput.value.trim();
+        const valid = !pax || (/^\d+$/.test(pax) && Number(pax) >= 1 && Number(pax) <= 1000);
+        const messages = {
+          en: 'Enter a whole number of passengers between 1 and 1000, or leave it blank.',
+          zh: '请输入1至1000之间的乘客人数，或留空。',
+          ms: 'Masukkan bilangan penumpang bulat antara 1 hingga 1000, atau biarkan kosong.',
+          hi: 'कृपया 1 से 1000 के बीच यात्रियों की पूर्ण संख्या दर्ज करें या खाली छोड़ें।'
+        };
+        paxInput.setCustomValidity(valid ? '' : messages[languageSelect.value] || messages.en);
+        return valid;
+      }
+
       dateInput.addEventListener('change', updateDateTimeLimits);
+      phoneInput.addEventListener('input', validatePhone);
+      paxInput.addEventListener('input', validatePax);
       updateDateTimeLimits();
 
       function sendWA(e) {
         e.preventDefault();
         updateDateTimeLimits();
-        if (!dateInput.reportValidity() || !timeInput.reportValidity()) return;
+        const language = languageSelect.value || 'en';
+        const messages = {
+          en: {name:'Please enter your name.', dateRequired:'Please select a date.', timeRequired:'Please select a time.', serviceRequired:'Please select a service.', future:'Please select a future date and time.', greeting:'Hello H&W ELITE LIMOUSINE, I would like to make an enquiry.', name:'Name', date:'Date', time:'Time', phone:'Phone Number', pax:'PAX', service:'Service Required', notes:'Additional Notes', missing:'Not provided', none:'None'},
+          zh: {name:'请输入您的姓名。', dateRequired:'请选择日期。', timeRequired:'请选择时间。', serviceRequired:'请选择服务。', future:'请选择未来的日期和时间。', greeting:'您好，H&W ELITE LIMOUSINE，我想咨询服务。', name:'姓名', date:'日期', time:'时间', phone:'电话号码', pax:'乘客人数', service:'所需服务', notes:'其他备注', missing:'未提供', none:'无'},
+          ms: {name:'Sila masukkan nama anda.', dateRequired:'Sila pilih tarikh.', timeRequired:'Sila pilih masa.', serviceRequired:'Sila pilih perkhidmatan.', future:'Sila pilih tarikh dan masa pada masa hadapan.', greeting:'Helo H&W ELITE LIMOUSINE, saya ingin membuat pertanyaan.', name:'Nama', date:'Tarikh', time:'Masa', phone:'Nombor Telefon', pax:'Bilangan Penumpang', service:'Perkhidmatan Diperlukan', notes:'Catatan Tambahan', missing:'Tidak diberikan', none:'Tiada'},
+          hi: {name:'कृपया अपना नाम दर्ज करें।', dateRequired:'कृपया तारीख चुनें।', timeRequired:'कृपया समय चुनें।', serviceRequired:'कृपया सेवा चुनें।', future:'कृपया भविष्य की तारीख और समय चुनें।', greeting:'नमस्ते H&W ELITE LIMOUSINE, मैं पूछताछ करना चाहता/चाहती हूँ।', name:'नाम', date:'तारीख', time:'समय', phone:'फ़ोन नंबर', pax:'यात्रियों की संख्या', service:'आवश्यक सेवा', notes:'अतिरिक्त जानकारी', missing:'नहीं दिया गया', none:'कोई नहीं'}
+        };
+        const t = messages[language] || messages.en;
+
+        nameInput.value = nameInput.value.trim();
+        nameInput.setCustomValidity(nameInput.value ? '' : t.name);
+        dateInput.setCustomValidity(dateInput.value ? '' : t.dateRequired);
+        timeInput.setCustomValidity(timeInput.value ? '' : t.timeRequired);
+        serviceInput.setCustomValidity(serviceInput.value ? '' : t.serviceRequired);
+
+        if (!nameInput.reportValidity()) return;
+        if (!dateInput.reportValidity()) return;
+        if (!timeInput.reportValidity()) return;
+        if (!serviceInput.reportValidity()) return;
+        if (!validatePhone() || !validatePax()) {
+          enquiryForm.reportValidity();
+          return;
+        }
+        if (!enquiryForm.reportValidity()) return;
+
         const now = new Date();
         const selected = new Date(`${dateInput.value}T${timeInput.value}`);
-        if (selected < now) {
-          timeInput.setCustomValidity('Please select a future time.');
+        if (selected <= now) {
+          timeInput.setCustomValidity(t.future);
           timeInput.reportValidity();
           timeInput.setCustomValidity('');
           return;
         }
-        const m = 'Hello H&W ELITE LIMOUSINE, I would like to make an enquiry.\n\nName: ' + document.getElementById('name').value + '\nDate: ' + dateInput.value + '\nTime: ' + timeInput.value + '\nPhone Number: ' + document.getElementById('phone').value + '\nPAX: ' + document.getElementById('pax').value + '\nService Required: ' + document.getElementById('service').value + '\nAdditional Notes: ' + document.getElementById('notes').value;
-        window.open('https://wa.me/6580162609?text=' + encodeURIComponent(m), '_blank');
+
+        const selectedService = serviceInput.options[serviceInput.selectedIndex].text.trim();
+        const message = `${t.greeting}\n\n${t.name}: ${nameInput.value}\n${t.date}: ${dateInput.value}\n${t.time}: ${timeInput.value}\n${t.phone}: ${phoneInput.value.trim() || t.missing}\n${t.pax}: ${paxInput.value || t.missing}\n${t.service}: ${selectedService}\n${t.notes}: ${notesInput.value.trim() || t.none}`;
+        const whatsappUrl = 'https://wa.me/7498859916?text=' + encodeURIComponent(message);
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
       }
-    </script> -->
+    </script>
   </body>
 </html>
